@@ -12,12 +12,16 @@
 </head>
 <body>
 <div ng-controller="myController">
-	{{message}}
-	<div>
-		<my-customer-details-directive></my-customer-details-directive>
-		<div my-customer-details-directive></div>
-		<div class="my-customer-details-directive"></div>
-		<!-- directive:my-customer-details-directive -->
+	
+	<div ng-repeat= "users in arrayOfUsers">
+		<my-customer-details-directive 
+		company-name="{{companyName}}"
+        user-details = "users"
+        change= "changeCompanyName()"
+		>
+			
+		</my-customer-details-directive>
+
 	</div>
 </div>
 <script type="text/javascript" src="https://code.angularjs.org/1.6.4/angular.js"></script>
